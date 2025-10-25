@@ -2,12 +2,13 @@ apiVersion: v1 # Descriptor conforms to version v1 of Kubernetes API
 kind: Pod # Select Pod resource
 metadata:
   name: hello-kube # The name of the pod
+  namespace: dev # Namespace to deploy the pod
   labels: 
     environment: dev # Label to identify the environment
     project: Kubernetes-series # Label to identify the project
 spec:
   containers:
-    - image: 080196/hello-kube # Image to create the container
+    - image: asdfsadf/hello-kube # Image to create the container
       name: hello-kube # The name of the container
       ports:
         - containerPort: 3000 # The port the app is listening on 
@@ -18,6 +19,7 @@ apiVersion: v1 # Descriptor conforms to version v1 of Kubernetes API
 kind: Pod # Select Pod resource
 metadata:
   name: hello-kube # The name of the pod
+  namespace: staging # Namespace to deploy the pod
   labels: 
     environment: staging # Label to identify the environment
     project: Kubernetes-series # Label to identify the project
@@ -34,6 +36,7 @@ apiVersion: v1 # Descriptor conforms to version v1 of Kubernetes API
 kind: Pod # Select Pod resource
 metadata:
   name: hello-kube # The name of the pod
+  namespace: production # Namespace to deploy the pod
   labels: 
     environment: production # Label to identify the environment
     project: Kubernetes-series # Label to identify the project
