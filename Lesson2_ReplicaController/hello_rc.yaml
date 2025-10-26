@@ -1,0 +1,21 @@
+replicaController:
+  apiVersion: v1
+  kind: ReplicationController
+  metadata:
+    name: hello-rc
+    labels:
+      app: hello
+  spec:
+    replicas: 3 # number of pod replicas
+    selector: # The pod selector determining what pods the RC is operating on
+      app: hello # Label values
+    template:
+      metadata:
+        labels:
+          app: hello-kube-01 #Label values must match the selector above
+      spec:
+        containers:
+        - name: hello-kube-01 # name of the container
+          image: 080196/hello-kube # image used to run container
+          ports:
+          - containerPort: 3000 # Port the container is listening on 
